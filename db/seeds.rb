@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Girl.create!(message_id: 1, name: 'りさ')
+GirlsMessage.create!(girl_id: 1, messages:
+    [
+        {
+            "message": "text1",
+            "bg": "cafe",
+            "girl": false,
+            "pose": "default"
+        },
+        {
+            "message": "text2",
+            "bg": "cafe",
+            "girl": true,
+            "pose": "default"
+        }
+    ]
+)
+Boy.create!(name: 'たくや')

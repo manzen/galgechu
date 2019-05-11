@@ -1,0 +1,2 @@
+module Api::BoysHelper
+end

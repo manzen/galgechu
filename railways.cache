@@ -1,0 +1,24 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+                          GET    /api/girls/:girl_id/message/:message_id(.:format)                                        api/girls#message
+                api_girls GET    /api/girls(.:format)                                                                     api/girls#index
+                          POST   /api/girls(.:format)                                                                     api/girls#create
+             new_api_girl GET    /api/girls/new(.:format)                                                                 api/girls#new
+            edit_api_girl GET    /api/girls/:id/edit(.:format)                                                            api/girls#edit
+                 api_girl GET    /api/girls/:id(.:format)                                                                 api/girls#show
+                          PATCH  /api/girls/:id(.:format)                                                                 api/girls#update
+                          PUT    /api/girls/:id(.:format)                                                                 api/girls#update
+                          DELETE /api/girls/:id(.:format)                                                                 api/girls#destroy
+          answer_api_boys POST   /api/boys/answer(.:format)                                                               api/boys#answer
+                 api_boys GET    /api/boys(.:format)                                                                      api/boys#index
+                          POST   /api/boys(.:format)                                                                      api/boys#create
+              new_api_boy GET    /api/boys/new(.:format)                                                                  api/boys#new
+             edit_api_boy GET    /api/boys/:id/edit(.:format)                                                             api/boys#edit
+                  api_boy GET    /api/boys/:id(.:format)                                                                  api/boys#show
+                          PATCH  /api/boys/:id(.:format)                                                                  api/boys#update
+                          PUT    /api/boys/:id(.:format)                                                                  api/boys#update
+                          DELETE /api/boys/:id(.:format)                                                                  api/boys#destroy
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

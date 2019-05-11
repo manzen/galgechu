@@ -1,0 +1,2 @@
+class BoyAnswer < ApplicationRecord
+end

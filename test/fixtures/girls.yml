@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyString
+  bg: MyString
+  girl: false
+  pose: MyString
+
+two:
+  message: MyString
+  bg: MyString
+  girl: false
+  pose: MyString
