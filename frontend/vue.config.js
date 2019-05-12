@@ -10,10 +10,12 @@ const TEMPLATE_PARAMS = {
 
 module.exports = {
     devServer: {
-        "^/api": {
-            target: "http://localhost:3000",
-            ws: true,
-            changeOrigin: true
+        proxy: {
+            "^/api": {
+                target: "http://localhost:3000",
+                ws: true,
+                changeOrigin: true
+            }
         }
     },
     css: {
