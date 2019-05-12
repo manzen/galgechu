@@ -19,7 +19,7 @@ export default {
 <style scoped lang="scss">
 .comment-item {
     & > p {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 </style>
