@@ -70,8 +70,8 @@ $ bundle install --path=vendor/bundle
 ### 8. データベースの作成
 
 ```
-$ budnle exec rails db:create
-$ budnle exec rails db:migrate
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
 
 または
 
