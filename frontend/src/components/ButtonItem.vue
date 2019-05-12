@@ -1,9 +1,9 @@
 <template lang="pug">
     .button-item
         template(v-if="buttonType === 'button'")
-            button.button {{ text }}
+            button.button(:data-icon="iconType") {{ text }}
         template(v-else)
-            router-link.button(:to="link") {{ text }}
+            router-link.button(:to="link" :data-icon="iconType") {{ text }}
 </template>
 
 <script>
@@ -21,6 +21,10 @@ export default {
         text: {
             type: String,
             default: "ボタン"
+        },
+        iconType: {
+            type: String,
+            default: ""
         }
     }
 };
@@ -36,8 +40,20 @@ export default {
     border-radius: 13px;
     font-size: 20px;
     color: #fff;
-    background-color: #FFA2A2;
+    background-color: #ffa2a2;
     text-decoration: none;
     text-align: center;
+    &[data-icon="external"] {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 42%;
+            right: 10%;
+            width: 14px;
+            height: 12px;
+            background-image: url(./../assets/icn_external.png);
+        }
+    }
 }
 </style>
