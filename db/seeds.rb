@@ -507,7 +507,7 @@ GirlsMessage.create!(
     girl_id: 1,
     scenario_id: "3",
     answer: "a",
-    "message": "りえちゃん：「わー！想像以上だった！感動しちゃった！」「あと〇〇くんて意外に大胆なんだね。ちょっとドキッとしちゃった笑」",
+    "message": "りえちゃん：「わー！想像以上だった！感動しちゃった！」「あと俺くんて意外に大胆なんだね。ちょっとドキッとしちゃった笑」",
     "bg": "aquarium",
     "display": true,
     "pose": "shine"
