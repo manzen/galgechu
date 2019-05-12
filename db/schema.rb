@@ -36,7 +36,14 @@ ActiveRecord::Schema.define(version: 2019_05_11_101617) do
     t.integer "girl_id"
     t.string "answer"
     t.string "scenario_id"
-    t.text "messages"
+    t.text "message"
+    t.string "bg"
+    t.boolean "display", default: false, null: false
+    t.string "pose"
+    t.boolean "is_end", default: false, null: false
+    t.string "choice1"
+    t.string "choice2"
+    t.string "choice3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
