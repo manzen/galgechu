@@ -2,7 +2,7 @@
     .talk
         header-item
         main.main(:data-bg="`cafe`")
-            comment-box
+            comment-box.comment-box
 </template>
 
 <script>
@@ -10,7 +10,7 @@ import HeaderItem from "../components/HeaderItem";
 import CommentBox from "../components/CommentBox";
 export default {
     name: "Talk",
-    components: {CommentBox, HeaderItem }
+    components: { CommentBox, HeaderItem }
 };
 </script>
 
@@ -21,6 +21,7 @@ export default {
     height: 100vh;
 }
 .main {
+    position: relative;
     flex: 1;
     &[data-bg="cafe"] {
         background-image: url("../assets/bg_restaurant.jpg");
@@ -30,5 +31,12 @@ export default {
         background-image: url("../assets/bg_ aquarium.jpg");
         background-size: auto 100%;
     }
+}
+.comment-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 9px;
+    margin: 0 auto;
 }
 </style>
