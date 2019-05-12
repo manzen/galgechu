@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_05_11_101617) do
   end
 
   create_table "girls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "message_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,7 +34,9 @@ ActiveRecord::Schema.define(version: 2019_05_11_101617) do
 
   create_table "girls_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "girl_id"
-    t.string "messages"
+    t.string "answer"
+    t.string "scenario_id"
+    t.text "messages"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

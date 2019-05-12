@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :girls do
-      get 'message/:message_id', to: 'girls#message'
+      get 'message/:scenario_id', to: 'girls#message'
     end
   end
   namespace :api do

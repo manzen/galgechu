@@ -1,7 +1,11 @@
 class GirlsMessage < ApplicationRecord
   belongs_to :girl
 
-  def self.find_girl_id_and_message_id(girl_id, message_id)
-    GirlsMessage.where('girl_id = ? and id = ?', girl_id, message_id).first
+  def self.find_girl_id_and_scenario_id(girl_id, scenario_id)
+    GirlsMessage.where('girl_id = ? and scenario_id = ?', girl_id, scenario_id).first
+  end
+
+  def self.find_girl_id_and_scenario_id_and_answer(girl_id, scenario_id, answer)
+    GirlsMessage.where('girl_id = ? and scenario_id = ? and answer = ?', girl_id, scenario_id, answer).first
   end
 end

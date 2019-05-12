@@ -15,7 +15,7 @@ class Api::GirlsController < ApplicationController
 
   def message
     girl = Girl.find params[:girl_id]
-    message = GirlsMessage.find_girl_id_and_message_id girl.id, params[:message_id]
+    message = GirlsMessage.find_girl_id_and_scenario_id girl.id, params[:scenario_id]
     response = message
     render json: response, status: 200
   end
