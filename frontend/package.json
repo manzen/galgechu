@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "npm run serve",
-    "build": "vue-cli-service build --dest ./../public",
+    "build": "vue-cli-service build --dest ./../public --no-clean",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
