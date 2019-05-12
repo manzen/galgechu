@@ -55,7 +55,7 @@ export default {
         },
         async getTalkData() {
             // todo API連携
-            const url = `/`;
+            const url = `/api/girls/1/message/1`;
             const res = await fetch(url, { mode: "cors" });
             console.log(res);
 
@@ -63,8 +63,18 @@ export default {
         },
         async postAnswer() {
             // todo API連携
-            const url = `/`;
-            const res = await fetch(url, { mode: "cors", method: "post" });
+            const url = `/api/boys/answer`;
+            const body = JSON.stringify({
+                boy_id: 1,
+                girl_id: 1,
+                scenario_id: "2",
+                answer: "a"
+            });
+            const res = await fetch(url, {
+                mode: "cors",
+                method: "post",
+                body
+            });
             console.log(res);
 
             this.replaceQueue();
