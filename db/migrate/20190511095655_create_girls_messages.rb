@@ -4,7 +4,14 @@ class CreateGirlsMessages < ActiveRecord::Migration[5.2]
       t.integer :girl_id
       t.string :answer
       t.string :scenario_id
-      t.text :messages
+      t.text :message
+      t.string :bg
+      t.boolean :display, default: false, null: false
+      t.string :pose
+      t.boolean :is_end, default: false, null: false
+      t.string :choice1
+      t.string :choice2
+      t.string :choice3
 
       t.timestamps
     end
