@@ -1,7 +1,7 @@
 <template lang="pug">
     .talk
         header-item
-        main.main(:data-bg="currentTalk.bg")
+        main.main(:data-bg="currentTalk.bg" v-if="currentTalk")
             chara(:pose="currentTalk.pose" v-if="currentTalk.girl")
             comment-box.comment-box(:comment="currentTalk.message" :choices="currentTalk.choices" @next="insertNextComment" @select="postAnswer")
 </template>
@@ -41,7 +41,7 @@ export default {
     components: { Chara, CommentBox, HeaderItem },
     data() {
         return {
-            talkData: [...dummyData]
+            talkData: ""
         };
     },
     computed: {
@@ -53,10 +53,28 @@ export default {
         insertNextComment() {
             this.talkData.shift();
         },
+        async getTalkData() {
+            // todo API連携
+            const url = `/api/girls/1/message/1`;
+            const res = await fetch(url, { mode: "cors" });
+            console.log(res);
+
+            this.replaceQueue();
+        },
         async postAnswer() {
             // todo API連携
-            const url = `/`;
-            const res = await fetch(url, { mode: "cors" });
+            const url = `/api/boys/answer`;
+            const body = JSON.stringify({
+                boy_id: 1,
+                girl_id: 1,
+                scenario_id: "2",
+                answer: "a"
+            });
+            const res = await fetch(url, {
+                mode: "cors",
+                method: "post",
+                body
+            });
             console.log(res);
 
             this.replaceQueue();
@@ -64,6 +82,9 @@ export default {
         replaceQueue(newQueue = dummyData) {
             this.talkData = [...newQueue];
         }
+    },
+    created() {
+        this.getTalkData();
     }
 };
 </script>
