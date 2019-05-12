@@ -1,28 +1,42 @@
 <template lang="pug">
   .home
-    img(src="../assets/logo.png" alt="Vue logo" @click="addCount")
-    p {{ count }}
-    HelloWorld(msg="Welcome to Your Vue.js App")
+    img.logo(src="@/assets/logo.png" alt="logo" @click="addCount")
+    button-item(:text="`はじめる`" :link="`/select`")
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HeaderItem from "../components/HeaderItem";
+import ButtonItem from "../components/ButtonItem";
 
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  },
-  computed: {
-    ...mapState(["count"])
-  },
-  methods: {
-    ...mapActions(["increment"]),
-    addCount() {
-      this.increment();
+    name: "home",
+    components: {
+        ButtonItem,
+        HeaderItem
+    },
+    computed: {
+        ...mapState(["count"])
+    },
+    methods: {
+        ...mapActions(["increment"]),
+        addCount() {
+            this.increment();
+        }
     }
-  }
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.logo {
+    display: block;
+    width: 100%;
+}
+</style>
