@@ -41,7 +41,8 @@ export default {
     components: { Chara, CommentBox, HeaderItem },
     data() {
         return {
-            talkData: ""
+            talkData: "",
+            talkCounter: 1
         };
     },
     computed: {
@@ -53,13 +54,17 @@ export default {
         insertNextComment() {
             this.talkData.shift();
         },
+        incrementScenario() {
+            this.talkCounter += 1;
+        },
         async getTalkData() {
             // todo API連携
-            const url = `/api/girls/1/message/1`;
+            const url = `/api/girls/1/message/${this.talkCounter}`;
             const res = await fetch(url, { mode: "cors" });
             console.log(res);
 
             this.replaceQueue();
+            this.incrementScenario();
         },
         async postAnswer() {
             // todo API連携
@@ -67,7 +72,7 @@ export default {
             const body = JSON.stringify({
                 boy_id: 1,
                 girl_id: 1,
-                scenario_id: "2",
+                scenario_id: this.talkCounter,
                 answer: "a"
             });
             const res = await fetch(url, {
