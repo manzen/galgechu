@@ -66,18 +66,23 @@ export default {
             this.replaceQueue();
             this.incrementScenario();
         },
-        async postAnswer() {
+        async postAnswer(answer) {
             // todo API連携
             const url = `/api/boys/answer`;
             const body = JSON.stringify({
                 boy_id: 1,
                 girl_id: 1,
                 scenario_id: this.talkCounter,
-                answer: "a"
+                answer: answer
             });
+            const headers = {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            };
             const res = await fetch(url, {
                 mode: "cors",
                 method: "post",
+                headers,
                 body
             });
             console.log(res);
