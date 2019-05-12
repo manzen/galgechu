@@ -1,9 +1,12 @@
 <template lang="pug">
     .talk
         header-item
-        main.main(:data-bg="currentTalk.bg" v-if="currentTalk")
+        main.main(v-if="currentTalk")
+            .bg(data-bg="cafe" :data-show="backgroundName === 'cafe'")
+            .bg(data-bg="aquarium" :data-show="backgroundName === 'aquarium'")
             chara.chara(:pose="currentTalk.pose" :data-show="currentTalk.display")
-            comment-box.comment-box(:comment="currentTalk.message" :choices="currentTalk.choices" @next="insertNextComment" @select="postAnswer")
+            comment-box.comment-box(:comment="currentTalk.message" :choices="choices" @next="insertNextComment" @select="postAnswer")
+            .result-pop(@click="moveResultPage" :data-show="isShowResultPop") 結果を見る
 </template>
 
 <script>
@@ -11,62 +14,57 @@ import HeaderItem from "../components/HeaderItem";
 import CommentBox from "../components/CommentBox";
 import Chara from "../components/Chara";
 
-const dummyData = [
-    {
-        message: "text1",
-        bg: "cafe",
-        display: false,
-        pose: "default"
-    },
-    {
-        message: "text2",
-        bg: "cafe",
-        display: true,
-        pose: "default"
-    },
-    {
-        message: "text3",
-        bg: "aquarium",
-        display: true,
-        pose: "default"
-    },
-    {
-        message: "text4",
-        choices: ["A. sampleA", "B. sampleB", "C. sampleC"]
-    }
-];
-
 export default {
     name: "Talk",
     components: { Chara, CommentBox, HeaderItem },
     data() {
         return {
             talkData: "",
-            talkCounter: 1
+            talkCounter: 1,
+            isShowResultPop: false
         };
     },
     computed: {
         currentTalk() {
             return this.talkData[0];
+        },
+        choices() {
+            if (this.isEnd) return [];
+            return [
+                this.currentTalk.choice1,
+                this.currentTalk.choice2,
+                this.currentTalk.choice3
+            ].filter(choice => !!choice);
+        },
+        backgroundName() {
+            return this.currentTalk.bg || "cafe";
+        },
+        isEnd() {
+            return this.currentTalk["is_end"];
+        },
+        talkLength() {
+            return this.talkData.length;
         }
     },
     methods: {
         insertNextComment() {
+            if (this.talkLength <= 1) return;
             this.talkData.shift();
         },
         incrementScenario() {
             this.talkCounter += 1;
         },
-        async getTalkData() {
+        getTalkData() {
             // todo API連携
             const url = `/api/girls/1/message/${this.talkCounter}`;
-            const res = await fetch(url, { mode: "cors" });
-            console.log(res);
-
-            this.replaceQueue();
-            this.incrementScenario();
+            fetch(url, { mode: "cors" })
+                .then(res => res.json())
+                .then(data => {
+                    this.replaceQueue(data);
+                });
         },
-        async postAnswer(answer) {
+        postAnswer(answer) {
+            this.incrementScenario();
             // todo API連携
             const url = `/api/boys/answer`;
             const body = JSON.stringify({
@@ -79,22 +77,42 @@ export default {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             };
-            const res = await fetch(url, {
+            fetch(url, {
                 mode: "cors",
                 method: "post",
                 headers,
                 body
-            });
-            console.log(res);
-
-            this.replaceQueue();
+            })
+                .then(res => res.json())
+                .then(data => {
+                    this.replaceQueue(data);
+                });
         },
-        replaceQueue(newQueue = dummyData) {
-            this.talkData = [...newQueue];
+        replaceQueue(newQueue) {
+            this.talkData = newQueue;
+        },
+        showResultPop() {
+            this.isShowResultPop = true;
+        },
+        moveResultPage() {
+            if (this.currentTalk.message === "HAPPY END") {
+                this.$router.push("/success");
+            } else {
+                this.$router.push("/failure");
+            }
         }
     },
     created() {
         this.getTalkData();
+    },
+    watch: {
+        talkLength: function(length) {
+            if (length === 1 && this.isEnd) {
+                setTimeout(() => {
+                    this.showResultPop();
+                }, 500);
+            }
+        }
     }
 };
 </script>
@@ -108,6 +126,19 @@ export default {
 .main {
     position: relative;
     flex: 1;
+    background-color: #000;
+}
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+    &[data-show="true"] {
+        opacity: 1;
+    }
     &[data-bg="cafe"] {
         background-image: url("../assets/bg_restaurant.jpg");
         background-size: auto 100%;
@@ -129,6 +160,29 @@ export default {
     &[data-show="true"] {
         opacity: 1;
         transition: opacity 1s;
+    }
+}
+.result-pop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    border: 4px solid #ffa2a2;
+    border-radius: 50%;
+    line-height: 130px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+    &[data-show="true"] {
+        opacity: 1;
+        pointer-events: auto;
     }
 }
 </style>
