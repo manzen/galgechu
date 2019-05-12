@@ -1,5 +1,5 @@
                    Prefix Verb   URI Pattern                                                                              Controller#Action
-                          GET    /api/girls/:girl_id/message/:message_id(.:format)                                        api/girls#message
+                          GET    /api/girls/:girl_id/message/:scenario_id(.:format)                                       api/girls#message
                 api_girls GET    /api/girls(.:format)                                                                     api/girls#index
                           POST   /api/girls(.:format)                                                                     api/girls#create
              new_api_girl GET    /api/girls/new(.:format)                                                                 api/girls#new

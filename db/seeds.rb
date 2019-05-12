@@ -128,31 +128,31 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "2", answer: "a", messages:
         {
             "message": "自分：「じゃあ、某遊園地はどうかな？遊園地好きなんだよね。」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「いいね！楽しそう！私も好きなんだ〜」心の声（いきなり遊園地とかハードル高いわ〜）",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「本当！？良かった〜！じゃあ来週とかどうかな？」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「了解〜！じゃあそろそろ行こっか！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「そうだね！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
@@ -178,49 +178,49 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "2", answer: "b", messages:
         {
             "message": "自分：「じゃあ、某水族館はどうかな？イルカショーがすごいんだよ！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「いいね！楽しそう！」心の声（イルカショーか〜微妙だな〜）",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "thinking"
         },
         {
             "message": "「本当！？良かった〜。この水族館の近くに海が見える綺麗なレストランもあるんだ！そこのランチが超オススメでセットでどう？」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「へー！いいね！楽しみ！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「りえちゃんの予定はいつが都合がいいかな？」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「再来週の日曜なら空いてるよ！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「じゃあその日の昼に品川駅集合でいいかな？」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「わかった〜。楽しみ！ちょっとトイレ行ってくるね！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
@@ -236,31 +236,31 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "2", answer: "c", messages:
         {
             "message": "自分：「じゃあ、キングダムって映画はどうかな？友達にオススメされて気になってたんだよね。」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「いいね！楽しそう！私も気になってたんだよね〜」心の声（うわーそれこないだ会った人と見たわ〜）",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「本当！？良かった〜！じゃあ来週とかどうかな？」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「了解〜！じゃあそろそろ行こっか！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「そうだね！」",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
@@ -298,72 +298,72 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "3", messages:
         {
             "message": "自分：「オレもちょうどいまきたとこだよ！いこっか！」心の声（こいつまた15分も遅れてきやがった。。）",
             "bg": "cafe",
-            "girl": false,
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「うわー！いっぱいお魚さんいるね！私ペンギンみたい！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「いいね！ペンギン見に行こう！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「ペンギンかわいい！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：心の声（りえちゃんはしゃいでいてかわいいな〜）",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「イルカショーって何時からなの？」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「イルカショーは一番近いのは後１時間後かな！」「早めに行くと席に座って見れるかも！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「座ってみたいなー！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「じゃあそろそろ会場に向かおうか！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「OKー！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default"
         },
         {
             "message": "ナレーション：「イルカショーが始まる。キラキラした綺麗な演出に合わせてイルカが飛び跳ねる。彼女はとてもうっとりしているようだ。ここしかない！彼女にアプローチをするのだ！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "default"
         },
         {
             "message": "どの方法でアプローチしますか？",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "default",
             "choices": [
@@ -378,73 +378,73 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "4", answer: "a", messages:
     [
         {
             "message": "自分：「そっと彼女の手を握る。特に抵抗はされなかった。」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "thinking"
         },
         {
             "message": "りえちゃん：「わー！想像以上だった！感動しちゃった！」「あと〇〇くんて意外に大胆なんだね。ちょっとドキッとしちゃった笑」",
-            "bg": "cafe",
-            "girl": false,
-            "pose": "thinking"
+            "bg": "aquarium",
+            "girl": true,
+            "pose": "shine"
         },
         {
             "message": "自分：「りえちゃんがあまりにも可愛かったからおもわずね。。よかったらこの後一緒にディナーでもどう？」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「いいね！行こう！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「近くに美味しいシーフードレストランがあるんだ笑」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「水族館の後にシーフードレストランとかヤバすぎでしょ笑」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「冗談だよ笑」「ここなんてどうかな？夜景が綺麗なんだ！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「おいし〜！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "default"
         },
         {
             "message": "自分：「りえちゃん。今日はありがとう！とても楽しかったよ。今後も一緒に色々なとこ行きたいな。よかったら俺と付き合ってほしい。」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "shine"
         },
         {
             "message": "りえちゃん：「私も俺くんと一緒にいるの楽しい。私でよければ！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "shine"
         },
         {
             "message": "ナレーション：「見事りえちゃんとお付き合いすることに成功！」「よくやった！」「このゲームは実際の彼女から得た情報を元にストーリーを作成しています。」「このゲームで培ったノウハウを元に実際の彼女と仲良くなってみよう！」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "shine"
         },
         {
             "message": "HAPPY END",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "shine",
             "choices": [
@@ -458,37 +458,37 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "4", answer: "b", messages:
     [
         {
             "message": "自分：「そっと彼女の腰に手を回す。腕を払われてしまった。」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "angry"
         },
         {
             "message": "りえちゃん：「どさくさに紛れてそーゆーことするのは良くないと思う！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "自分：「ごめん。りえちゃんが魅力的すぎて。」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "りえちゃん：「もー！俺くんのエッチ！サイテー！」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "ナレーション：「この後二人は別れ帰宅する。帰宅後に彼女にお礼のメッセージを送るが、感謝の内容の返事が来た以降、彼女から連絡が来ることはなかった。」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "angry"
         },
         {
             "message": "BAD END",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "ng",
             "choices": [
@@ -502,37 +502,37 @@ GirlsMessage.create!(girl_id: 1, scenario_id: "4", answer: "c", messages:
     [
         {
             "message": "自分：「彼女にキスしようとするが。華麗に回避されてしまった。」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "default"
         },
         {
             "message": "りえちゃん：「いきなり何！？」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "自分：「ごめん。りえちゃんが魅力的すぎて。」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "りえちゃん：「いきなりそーゆーことするのはないと思うな。。。」",
-            "bg": "cafe",
-            "girl": false,
+            "bg": "aquarium",
+            "girl": true,
             "pose": "angry"
         },
         {
             "message": "ナレーション：「この後二人は別れ帰宅する。帰宅後に彼女にお礼のメッセージを送るが、感謝の内容の返事が来た以降、彼女から連絡が来ることはなかった。」",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": false,
             "pose": "angry"
         },
         {
             "message": "BAD END",
-            "bg": "cafe",
+            "bg": "aquarium",
             "girl": true,
             "pose": "ng",
             "choices": [
