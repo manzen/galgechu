@@ -2,7 +2,7 @@
     .talk
         header-item
         main.main(:data-bg="currentTalk.bg" v-if="currentTalk")
-            chara(:pose="currentTalk.pose" v-if="currentTalk.girl")
+            chara.chara(:pose="currentTalk.pose" :data-show="currentTalk.display")
             comment-box.comment-box(:comment="currentTalk.message" :choices="currentTalk.choices" @next="insertNextComment" @select="postAnswer")
 </template>
 
@@ -15,19 +15,19 @@ const dummyData = [
     {
         message: "text1",
         bg: "cafe",
-        girl: false,
+        display: false,
         pose: "default"
     },
     {
         message: "text2",
         bg: "cafe",
-        girl: true,
+        display: true,
         pose: "default"
     },
     {
         message: "text3",
         bg: "aquarium",
-        girl: true,
+        display: true,
         pose: "default"
     },
     {
@@ -123,5 +123,12 @@ export default {
     right: 0;
     bottom: 9px;
     margin: 0 auto;
+}
+.chara {
+    opacity: 0;
+    &[data-show="true"] {
+        opacity: 1;
+        transition: opacity 1s;
+    }
 }
 </style>
